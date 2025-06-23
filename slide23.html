@@ -105,10 +105,10 @@
         /* Title styling - Mobile first */
         h1 {
             color: var(--text-primary);
-            font-size: 28px;
+            font-size: var(--title-md);
             font-weight: 700;
-            margin-bottom: 12px;
-            line-height: 1.2;
+            margin-bottom: clamp(2px, 0.3vh, 6px);
+            line-height: 1;
             text-align: center;
             background: linear-gradient(135deg, var(--title-blue) 0%, var(--title-blue-light) 100%);
             -webkit-background-clip: text;
@@ -131,6 +131,8 @@
             grid-template-columns: 1fr;
             gap: 20px;
             width: 100%;
+            transform: scale(clamp(0.7, calc(100vh / 840px), 1.0));
+            transform-origin: top center;
         }
         
         /* Section titles - Mobile first */
@@ -435,13 +437,13 @@
                 max-width: 1920px;
                 max-height: 1080px;
                 overflow: hidden;
-                padding: 10vh 2vw 6vh !important;
+                padding: clamp(100px, 10vh, 120px) clamp(20px, 2.5vw, 50px) clamp(80px, 8vh, 100px);
             }
             
             .content-wrapper {
-                height: calc(100vh - 200px) !important;
-                max-height: calc(100vh - 200px) !important;
-                overflow: hidden !important;
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
                 display: flex !important;
                 flex-direction: column !important;
                 gap: 0.3vh !important;
@@ -464,8 +466,8 @@
             }
             
             h1 {
-                font-size: min(2.8vh, 26px) !important;
-                margin-bottom: 0.8vh !important;
+                font-size: var(--title-md);
+                margin-bottom: clamp(2px, 0.3vh, 6px);
             }
             
             .subtitle {
@@ -479,8 +481,9 @@
                 gap: clamp(15px, 2.5vw, 25px);
                 flex: 1 1 auto;
                 min-height: 0;
-                overflow-y: auto;
-                overflow-x: hidden;
+                overflow: visible;
+                transform: scale(clamp(0.7, calc(100vh / 840px), 1.0));
+                transform-origin: top center;
             }
             
             h2 {
@@ -546,22 +549,22 @@
             }
             
             .strategic-section {
-                padding: clamp(14px, 2vh, 18px);
-                border-radius: clamp(12px, 1.2vw, 16px);
+                padding: clamp(8px, 1vh, 12px);
+                border-radius: clamp(8px, 0.8vw, 12px);
             }
             
             .strategic-title {
-                margin-bottom: clamp(12px, 1.8vh, 16px);
-                font-size: clamp(18px, 2.2vw, 20px);
+                margin-bottom: clamp(6px, 0.8vh, 10px);
+                font-size: clamp(16px, 1.8vw, 18px);
             }
             
             .strategic-grid {
-                gap: clamp(10px, 1.5vh, 14px);
+                gap: clamp(6px, 0.8vh, 10px);
             }
             
             .strategic-item {
-                padding: clamp(10px, 1.5vh, 14px);
-                border-radius: clamp(6px, 0.8vw, 8px);
+                padding: clamp(6px, 1vh, 10px);
+                border-radius: clamp(4px, 0.6vw, 6px);
             }
             
             .strategic-icon {
@@ -576,25 +579,25 @@
         
         /* Height constrained screens - Desktop only */
         @media (max-height: 950px) and (min-width: 768px) {
-            .slide { padding: 8vh 2vw 4vh !important; }
+            .slide { padding: clamp(90px, 9vh, 110px) clamp(15px, 2vw, 40px) clamp(70px, 7vh, 90px); }
             .content-wrapper { height: 88vh !important; }
-            h1 { font-size: min(2.8vh, 26px) !important; }
+            h1 { font-size: var(--title-md); }
             .subtitle { font-size: min(1.8vh, 16px) !important; }
         }
         
         @media (max-height: 850px) and (min-width: 768px) {
-            .slide { padding: 6vh 2vw 3vh !important; }
+            .slide { padding: clamp(80px, 8vh, 100px) clamp(15px, 2vw, 35px) clamp(65px, 6.5vh, 80px); }
             .content-wrapper { height: 91vh !important; }
-            h1 { font-size: min(2.5vh, 24px) !important; }
+            h1 { font-size: var(--title-md); }
             .subtitle { font-size: min(1.6vh, 14px) !important; }
             .benefit-card { padding: clamp(12px, 2vh, 18px); }
             .savings-card { padding: clamp(15px, 2.5vh, 20px); }
         }
         
         @media (max-height: 750px) and (min-width: 768px) {
-            .slide { padding: 4vh 1.5vw 2vh !important; }
+            .slide { padding: 70px 15px 60px; }
             .content-wrapper { height: 94vh !important; gap: clamp(5px, 0.8vh, 8px); }
-            h1 { font-size: min(2.2vh, 20px) !important; }
+            h1 { font-size: var(--title-md); }
             .subtitle { font-size: min(1.4vh, 12px) !important; }
             .benefit-card { padding: clamp(10px, 1.5vh, 15px); }
             .card-title { font-size: clamp(14px, 1.8vw, 18px); }
