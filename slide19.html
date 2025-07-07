@@ -131,9 +131,13 @@
                 height: clamp(35px, 4.5vh, 50px);
                 font-size: clamp(16px, 2.2vh, 24px);
             }
-                min-height: 0;
-                overflow: hidden; /* No scrolling - everything must fit */
-            }
+        }
+        
+        /* Missing rule for min-height and overflow - properly closed */
+        .features-grid {
+            min-height: 0;
+            overflow: hidden; /* No scrolling - everything must fit */
+        }
             
             /* ISO section - fixed but minimal */
             .iso-section {
